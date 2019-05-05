@@ -2,6 +2,7 @@ import scipy.io.wavfile
 import pydub
 
 def transform(path,filename):
+    print(path+filename+".mp3")
     mp3 = pydub.AudioSegment.from_mp3(path+filename+".mp3")
     mp3.export(path+filename+".wav",format="wav")
 
