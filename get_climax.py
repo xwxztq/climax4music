@@ -2,8 +2,8 @@
 import os
 import scipy.io.wavfile as wav
 import numpy as np
-import audio_transfer
-import spectrogram
+from . import audio_transfer
+from . import spectrogram
 
 
 def get_that(path, filename):
