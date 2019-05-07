@@ -7,8 +7,9 @@ from . import spectrogram
 
 
 def get_that(path, filename):
+
     # outfile = open(path+filename+".txt","w",encoding="utf-8")
-    filepath = path + filename + ".wav"
+    filepath = os.path.join(path, filename) + ".wav"
     ims = spectrogram.plotstft(filepath, plotpath=path + filename)
     samplerate, samples = wav.read(filepath)
     timelength = samples.shape[0] / samplerate
@@ -66,7 +67,6 @@ def process_audio(filepath, path=""):
 
     prepath, filename = os.path.split(filepath)
     purename, the_format = filename.split('.')
-
 
     if path == "":
         path = prepath
